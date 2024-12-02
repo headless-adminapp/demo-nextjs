@@ -9,6 +9,7 @@ import { registerIconSet } from '@headless-adminapp/icons/register';
 import { iconSet } from '@headless-adminapp/icons-fluent';
 import { PropsWithChildren } from 'react';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import { appStore } from './config/appStore';
 
 registerIconSet(iconSet);
 
@@ -23,6 +24,9 @@ export default function AppLayout({ children }: PropsWithChildren) {
         router: router,
         pathname: pathname,
         searchParams: searchParams,
+      }}
+      metadataProps={{
+        appStore,
       }}
     >
       <App appId="default">{children}</App>
