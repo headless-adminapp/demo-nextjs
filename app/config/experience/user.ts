@@ -27,5 +27,37 @@ export const userSchemaExperience = builder.defineExperience({
         },
       }),
     },
+    {
+      id: 'default',
+      name: 'Active users',
+      experience: builder.defineViewExperience({
+        grid: {
+          columns: [
+            {
+              name: 'name',
+            },
+            {
+              name: 'phone',
+            },
+            {
+              name: 'email',
+            },
+            {
+              name: 'status',
+            },
+          ],
+        },
+        filter: {
+          type: 'and',
+          conditions: [
+            {
+              field: 'status',
+              operator: 'eq',
+              value: 'active',
+            },
+          ],
+        },
+      }),
+    },
   ],
 });
