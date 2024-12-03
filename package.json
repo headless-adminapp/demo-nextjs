@@ -14,6 +14,9 @@
     "@headless-adminapp/fluent": "^0.0.17-alpha.34",
     "@headless-adminapp/icons": "^0.0.17-alpha.12",
     "@headless-adminapp/icons-fluent": "^0.0.17-alpha.28",
+    "@headless-adminapp/server-sdk": "^0.0.17-alpha.34",
+    "@headless-adminapp/server-sdk-mongo": "^0.0.17-alpha.26",
+    "mongoose": "^8.8.3",
     "next": "14.1.4",
     "react": "^18",
     "react-dom": "^18"

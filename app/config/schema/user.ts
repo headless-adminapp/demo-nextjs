@@ -13,7 +13,7 @@ export const userSchema = defineSchema({
       label: 'Id',
       required: true,
       readonly: true,
-      string: true,
+      objectId: true,
     },
     name: {
       type: 'string',
