@@ -13,6 +13,8 @@ import { appStore } from './config/appStore';
 import { clientExperienceStore } from './config/clientExperienceStore';
 import { clientSchemaStore } from './config/clientSchemaStore';
 import { dataService } from './config/data-service';
+import { sessionResolver } from './sessionResolver';
+import { AuthProviderPlaceholder } from './AuthProviderPlaceholder';
 
 registerIconSet(iconSet);
 
@@ -34,6 +36,13 @@ export default function AppLayout({ children }: PropsWithChildren) {
         experienceStore: clientExperienceStore,
         schemaStore: clientSchemaStore,
       }}
+      authProps={{
+        sessionResolver,
+        onUnauthenticated: () => {
+          localStorage.removeItem('loginUserInfo');
+        },
+      }}
+      authPlaceholder={AuthProviderPlaceholder}
     >
       <App appId="default">{children}</App>
     </LayoutProvider>
