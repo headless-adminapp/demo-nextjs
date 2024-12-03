@@ -21,6 +21,10 @@ export const dataService: IDataService = {
     return {
       _id: 1,
       name: 'John Doe',
+      email: 'john.doe@example.com',
+      phone: '123-456-7890',
+      age: 30,
+      status: 'active',
     };
   },
   createRecord: async (logicalName, data) => {
