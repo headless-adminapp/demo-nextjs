@@ -1,5 +1,6 @@
 import { ClientAppStore } from '@headless-adminapp/app/store';
 import { PageType } from '@headless-adminapp/core/experience/app';
+import { commands } from './commands';
 
 export const appStore = new ClientAppStore();
 
@@ -31,4 +32,7 @@ appStore.register({
       ],
     },
   ],
+  viewCommands: commands.view,
+  formCommands: commands.form,
+  subgridCommands: commands.subgrid,
 });
