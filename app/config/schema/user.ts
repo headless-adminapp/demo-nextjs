@@ -20,6 +20,30 @@ export const userSchema = defineSchema({
       format: 'text',
       label: 'Name',
     },
+    phone: {
+      type: 'string',
+      format: 'phone',
+      label: 'Phone',
+    },
+    email: {
+      type: 'string',
+      format: 'email',
+      label: 'Email',
+    },
+    age: {
+      type: 'number',
+      format: 'integer',
+      label: 'Age',
+    },
+    status: {
+      type: 'choice',
+      label: 'Status',
+      string: true,
+      options: [
+        { value: 'active', label: 'Active' },
+        { value: 'inactive', label: 'Inactive' },
+      ],
+    },
   },
 });
 
