@@ -4,6 +4,8 @@ import dbConnect from '../utils/db-connect';
 import { ExecuteParams, IServerSdk } from '@headless-adminapp/server-sdk';
 import { MongoServerSdk } from '@headless-adminapp/server-sdk-mongo';
 import { schemaStore } from './config/schemaStore';
+import { SdkContext } from './config/types';
+import { dataFilter } from './config/dataFilter';
 
 export async function POST(req: NextRequest) {
   try {
@@ -13,8 +15,9 @@ export async function POST(req: NextRequest) {
     const body = await req.json();
 
     // setup and configure sdk
-    const sdk: IServerSdk = new MongoServerSdk({
+    const sdk: IServerSdk = new MongoServerSdk<SdkContext>({
       schemaStore,
+      dataFilter,
     });
 
     // execute sdk message
