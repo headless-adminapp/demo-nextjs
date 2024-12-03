@@ -22,6 +22,10 @@ appStore.register({
               label: 'First page',
               link: '/first-page',
             },
+            {
+              type: PageType.EntityView,
+              logicalName: 'users',
+            },
           ],
         },
       ],

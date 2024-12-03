@@ -10,6 +10,9 @@ import { iconSet } from '@headless-adminapp/icons-fluent';
 import { PropsWithChildren } from 'react';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { appStore } from './config/appStore';
+import { clientExperienceStore } from './config/clientExperienceStore';
+import { clientSchemaStore } from './config/clientSchemaStore';
+import { dataService } from './config/data-service';
 
 registerIconSet(iconSet);
 
@@ -25,8 +28,11 @@ export default function AppLayout({ children }: PropsWithChildren) {
         pathname: pathname,
         searchParams: searchParams,
       }}
+      dataService={dataService}
       metadataProps={{
         appStore,
+        experienceStore: clientExperienceStore,
+        schemaStore: clientSchemaStore,
       }}
     >
       <App appId="default">{children}</App>
