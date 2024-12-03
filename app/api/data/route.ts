@@ -6,6 +6,7 @@ import { MongoServerSdk } from '@headless-adminapp/server-sdk-mongo';
 import { schemaStore } from './config/schemaStore';
 import { SdkContext } from './config/types';
 import { dataFilter } from './config/dataFilter';
+import { pluginStore } from './plugins';
 
 export async function POST(req: NextRequest) {
   try {
@@ -18,6 +19,7 @@ export async function POST(req: NextRequest) {
     const sdk: IServerSdk = new MongoServerSdk<SdkContext>({
       schemaStore,
       dataFilter,
+      pluginStore,
     });
 
     // execute sdk message
